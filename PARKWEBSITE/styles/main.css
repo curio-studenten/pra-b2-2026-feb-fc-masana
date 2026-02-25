@@ -23,6 +23,13 @@ body, html{
   margin: 0 auto;
 }
 
+/* Maak elementen in een .row naast elkaar geplaatst (flex layout) */
+.row{
+  display: flex;
+  flex-direction: row;
+}
+
+
 header{
   background: url('../images/park01.jpg');
   background-size: cover;
@@ -120,6 +127,18 @@ article h2.rides{
 }
 article h2.open-forever{
   background-image: url('../images/open-james-lee.jpg');
+}
+
+/* Emphasized ticket block */
+.emphasize{
+  border-left: 5px solid #27AE60;
+  box-shadow: 1px 0 5px #27AE60;
+  padding: 1em;
+}
+.emphasize h2{
+  margin: 0;
+  border-left: none;
+  text-align: center;
 }
 
 .product{
