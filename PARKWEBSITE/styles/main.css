@@ -1,4 +1,4 @@
-/*
+ /*
   Afgesproken kleuren:
 
     * Lichte achtergrond: #FCFCFC
@@ -71,6 +71,7 @@ h1{
 h2{
   border-left: 5px solid #27AE60;
   padding-left: 10px;
+  
 }
 
 main{
@@ -115,6 +116,7 @@ article h2{
   background-position: center;
   background-size: cover;
   text-align: center;
+  text-shadow: 0 0 0 #FCFCFC, -1px -1px 0 #FCFCFC, 1px -1px 0 #FCFCFC, -1px 1px 0 #FCFCFC, 1px 1px 0 #FCFCFC;
 }
 article h2.fun-for-family{
   background-image: url('../images/family-fun-george-arthur-pflueger.jpg');
@@ -168,6 +170,7 @@ button{
   border: 2px solid #FCFCFC;
   color: #000000;
   font-weight: bold;
+  cursor: pointer;
 }
 
 .payment-option{
@@ -205,13 +208,14 @@ footer{
 */
 
 @media (max-width: 480px) {
+  .hidden-on-lg {
+    display: block;
+  }
 
+  .hidden-on-sm {
+    display: none;
+  }
 }
-
-/* 
-  ##Device = Tablets, Ipads (portrait)
-  ##Screen = B/w 768px to 1024px
-*/
 
 @media (max-width: 1024px) {
   .logo{
@@ -222,6 +226,7 @@ footer{
   .row{
     flex-direction: column;
   }
+
   .sidy-by-side{
     flex-direction: column;
     align-items: center;
@@ -229,45 +234,62 @@ footer{
 }
 
 /*
-  help! Het lettertype wordt om een of andere reden niet goed geladen... Misschien heeft het iets met het pad naar de fonts te maken?
+  Corrected font-face for Heartbeat
 */
 @font-face {
   font-family: 'Heartbeat';
-  src:  url('fonts/heartbeat.eot') format('eot'),
-        url('fonts/heartbeat.otf') format('otf'),
-        url('fonts/heartbeat.woff') format('woff'),
-        url('fonts/heartbeat.svg') format('svg'),
-        url('fonts/heartbeat.ttf') format('ttf');
+  src: url('../fonts/heartbeat.woff2') format('woff2'),
+       url('../fonts/heartbeat.woff') format('woff'),
+       url('../fonts/heartbeat.ttf') format('truetype'),
+       url('../fonts/heartbeat.otf') format('opentype'),
+       url('../fonts/heartbeat.svg#Heartbeat') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
 }
 
 /*
   Animations for fading in logo on page load
 */
 @keyframes fadein {
-from { opacity: 0; }
-to   { opacity: 1; }
+  from { opacity: 0; }
+  to   { opacity: 1; }
 }
 
 /* Firefox < 16 */
 @-moz-keyframes fadein {
-from { opacity: 0; }
-to   { opacity: 1; }
+  from { opacity: 0; }
+  to   { opacity: 1; }
 }
 
 /* Safari, Chrome and Opera > 12.1 */
 @-webkit-keyframes fadein {
-from { opacity: 0; }
-to   { opacity: 1; }
+  from { opacity: 0; }
+  to   { opacity: 1; }
 }
 
 /* Internet Explorer */
 @-ms-keyframes fadein {
-from { opacity: 0; }
-to   { opacity: 1; }
+  from { opacity: 0; }
+  to   { opacity: 1; }
 }
 
 /* Opera < 12.1 */
 @-o-keyframes fadein {
-from { opacity: 0; }
-to   { opacity: 1; }
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+.button-link {
+  display: inline-block;
+  width: 100%;
+  margin-top: 1em;
+  padding: 0.5em;
+  background: #27AE60;
+  border: 2px solid #FCFCFC;
+  color: #000000;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
 }
